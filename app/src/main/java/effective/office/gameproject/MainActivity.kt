@@ -7,7 +7,6 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import effective.office.gameproject.ui.theme.AppTheme
@@ -47,13 +46,5 @@ fun ApplySystemBarColors() {
     SideEffect {
         systemUiController.setSystemBarsColor(color = Color.Transparent)
         systemUiController.setNavigationBarColor(color = Color.Transparent)
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppTheme {
-
     }
 }
