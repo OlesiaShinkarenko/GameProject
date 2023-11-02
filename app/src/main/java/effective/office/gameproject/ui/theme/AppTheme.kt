@@ -35,6 +35,7 @@ object AppTheme {
     object ButtonColors{
          val button  @Composable
          get() = Color(0xFFF4D144)
+        val border = Color(0xFF1F2430)
     }
 
     object TextStyle{

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GameProject</string>
+    <string name="header">DoTA 2</string>
 </resources>
