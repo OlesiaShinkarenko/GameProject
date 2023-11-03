@@ -1,5 +1,6 @@
 package effective.office.gameproject.ui.theme
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -61,8 +62,25 @@ fun DotaScreen() {
                 modifier = Modifier.fillMaxWidth()
             )
         }
+        item{
+            PrimaryButton(
+                text = stringResource(id = R.string.install),
+                onClick ={
+                    Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+                },
+                modifier = Modifier.fillMaxWidth()
+                    .padding(
+                        start = 24.dp,
+                        end = 24.dp,
+                        top = 20.dp,
+                        bottom = 40.dp
+                    )
+            )
+        }
     }
 }
+
+
 
 
 @Composable
