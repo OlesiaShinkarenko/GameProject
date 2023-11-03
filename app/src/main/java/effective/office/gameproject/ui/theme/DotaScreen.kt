@@ -77,6 +77,15 @@ fun DotaScreen() {
                 )
                 )
         }
+        item {
+            Rating(
+                text = stringResource(id = R.string.rate),
+                modifier = Modifier.fillMaxWidth().padding(
+                    start = 24.dp,
+                    end = 24.dp
+                )
+            )
+        }
         val comments = listOf(
             CommentUI(
                 author =  R.string.user1,
