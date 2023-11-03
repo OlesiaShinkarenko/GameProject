@@ -43,6 +43,16 @@ fun DotaScreen() {
                 .fillMaxWidth()
                 .padding(bottom = 40.dp))
         }
+        item{
+            CategoriesRow(
+                resList = listOf(
+                    R.string.categories1,
+                    R.string.categories2,
+                    R.string.categories3
+                ),
+                contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
+            )
+        }
         item {
             Text(
                 text = stringResource(id = R.string.description),
@@ -138,7 +148,6 @@ fun DotaScreen() {
     }
 }
 
-
 @Composable
 fun DotaScreenHeader(
     modifier: Modifier = Modifier,
@@ -179,7 +188,6 @@ fun HeaderBackground(painter: Painter, modifier: Modifier = Modifier, content : 
                 painter = painter,
                 contentDescription = null
             )
-
         Box(
             modifier = Modifier
                 .align(Alignment.BottomStart)
