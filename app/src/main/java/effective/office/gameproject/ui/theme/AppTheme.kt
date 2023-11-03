@@ -10,31 +10,21 @@ import androidx.compose.ui.unit.sp
 
 object AppTheme {
     object BgColors{
-        val primary @Composable get() = Color(0xFF050B18)
+        val primary= Color(0xFF050B18)
+        val divider = Color(0xFF1A1F29)
     }
     object TextColors{
-    val count
-        @Composable
-        get() = Color(0xFF45454D)
-        val description
-            @Composable
-            get() = Color(0xB2EEF2FB)
-         val header1  @Composable
-         get() = Color(0xFFEEF2FB)
-         val header2  @Composable
-         get()  = Color(0xFFFFFFFF)
-         val category   @Composable
-         get()= Color(0xFF41A0E7)
-         val header3  @Composable
-         get() = Color(0x66FFFFFF)
-         val report  @Composable
-         get() = Color(0xFFA8ADB7)
-         val button  @Composable
-         get() = Color(0xFF050B18)
+    val count = Color(0xFF45454D)
+        val description = Color(0xB2EEF2FB)
+         val header1= Color(0xFFEEF2FB)
+         val header2  = Color(0xFFFFFFFF)
+         val category  = Color(0xFF41A0E7)
+         val header3  = Color(0x66FFFFFF)
+         val report = Color(0xFFA8ADB7)
+         val button = Color(0xFF050B18)
     }
     object ButtonColors{
-         val button  @Composable
-         get() = Color(0xFFF4D144)
+         val button = Color(0xFFF4D144)
         val border = Color(0xFF1F2430)
     }
 

@@ -11,8 +11,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -37,7 +39,9 @@ fun DotaScreen() {
         state = lazyListState,
         modifier = Modifier.fillMaxSize()){
         item {
-            DotaScreenHeader(modifier = Modifier.fillMaxWidth())
+            DotaScreenHeader(modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 40.dp))
         }
         item {
             Text(
@@ -58,9 +62,53 @@ fun DotaScreen() {
                     R.drawable.video_preview1,
                     R.drawable.video_preview2
                 ),
-                contentPadding = PaddingValues(start =24.dp, end = 24.dp ),
-                modifier = Modifier.fillMaxSize(1F)
+                contentPadding = PaddingValues(start =24.dp, end = 24.dp )
             )
+        }
+        item{
+            Text(text = stringResource(id = R.string.review),
+                style = AppTheme.TextStyle.Bold_16,
+                color = AppTheme.TextColors.header2,
+                modifier = Modifier.padding(
+                    start = 24.dp,
+                    end = 24.dp,
+                    top = 20.dp,
+                    bottom = 12.dp
+                )
+                )
+        }
+        val comments = listOf(
+            CommentUI(
+                author =  R.string.user1,
+                image = R.drawable.avatar1,
+                date= R.string.date,
+                comment = R.string.comment
+            ),
+            CommentUI(
+                author =  R.string.user2,
+                image = R.drawable.avatar2,
+                date= R.string.date,
+                comment = R.string.comment
+            )
+        )
+        itemsIndexed(comments){
+            index, item ->
+            CommentBlock(
+                item,
+                modifier = Modifier.
+                padding(
+                    start = 24.dp,
+                    end = 24.dp,
+                    top = 16.dp
+                )
+            )
+            if(index< comments.lastIndex){
+                Divider(
+                    color = AppTheme.BgColors.divider,
+                    thickness = 1.dp,
+                    modifier = Modifier.padding(top = 12.dp, bottom = 10.dp)
+                )
+            }
         }
         item{
             PrimaryButton(
@@ -68,7 +116,8 @@ fun DotaScreen() {
                 onClick ={
                     Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(
                         start = 24.dp,
                         end = 24.dp,
@@ -79,8 +128,6 @@ fun DotaScreen() {
         }
     }
 }
-
-
 
 
 @Composable
@@ -130,7 +177,8 @@ fun HeaderBackground(painter: Painter, modifier: Modifier = Modifier, content : 
                 .graphicsLayer {
                     translationY = 160f
                 }
-                .padding(horizontal = 21.dp),
+                .padding(horizontal = 21.dp)
+                .padding(bottom = 40.dp),
         ) { content() }
     }
 }
