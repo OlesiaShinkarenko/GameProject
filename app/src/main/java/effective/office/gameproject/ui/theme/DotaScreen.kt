@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -50,8 +51,19 @@ fun DotaScreen() {
                 )
             )
         }
+        item {
+            VideoPreviewRow(
+                previewResList = listOf(
+                    R.drawable.video_preview1,
+                    R.drawable.video_preview2
+                ),
+                contentPadding = PaddingValues(start =24.dp, end = 24.dp ),
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
     }
 }
+
 
 @Composable
 fun DotaScreenHeader(
