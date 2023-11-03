@@ -3,9 +3,12 @@ package effective.office.gameproject.ui.theme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,19 +29,23 @@ fun VideoPreviewRow(contentPadding: PaddingValues, modifier: Modifier = Modifier
             item->
             Video(
                 item = item,
+                modifier = Modifier.size(height = 120.dp, width = 240.dp)
             )
         }
     }
 }
 
 @Composable
-fun Video(item:Int) {
-    Image(
-        modifier = Modifier.clip(RoundedCornerShape(6.dp)),
-        painter = painterResource(id = item),
-        contentDescription = null,
-        contentScale = ContentScale.Fit
-    )
+fun Video(item: Int, modifier: Modifier) {
+    Card (modifier =  modifier.clip(RoundedCornerShape(6.dp))){
+        Image(
+            modifier = Modifier.fillMaxSize(),
+            painter = painterResource(id = item),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth
+        )
+    }
+
 }
 
 @Preview

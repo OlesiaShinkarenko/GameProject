@@ -59,7 +59,7 @@ fun DotaScreen() {
                     R.drawable.video_preview2
                 ),
                 contentPadding = PaddingValues(start =24.dp, end = 24.dp ),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxSize(1F)
             )
         }
         item{
