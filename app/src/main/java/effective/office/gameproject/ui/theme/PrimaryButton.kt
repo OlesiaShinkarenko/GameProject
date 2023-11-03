@@ -25,7 +25,7 @@ fun PrimaryButton(text: String, onClick: ()->Unit, modifier: Modifier = Modifier
             text = text,
             style = AppTheme.TextStyle.Bold_20,
             modifier = Modifier.align(Alignment.CenterVertically),
-            color = AppTheme.TextColors.button
+            color = AppTheme.TextColors.buttonT
         )
     }
 }

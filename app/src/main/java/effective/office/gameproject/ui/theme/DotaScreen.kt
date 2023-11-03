@@ -188,7 +188,7 @@ fun DotaLogo() {
         Image(
             modifier = Modifier
                 .background(
-                    color = AppTheme.TextColors.button
+                    color = AppTheme.TextColors.buttonT
                 )
                 .border(
                     2.dp,

@@ -33,7 +33,7 @@ fun CategoriesRow(resList: List<Int>, contentPadding: PaddingValues, modifier: M
 fun Category(item: Int) {
     Text(
         text = stringResource(id = item),
-        modifier = Modifier.background(color = AppTheme.ButtonColors.category, shape = RoundedCornerShape(12.dp)).padding(horizontal = 10.dp, vertical = 5.dp),
+        modifier = Modifier.background(color = AppTheme.ButtonColors.categoryB, shape = RoundedCornerShape(12.dp)).padding(horizontal = 10.dp, vertical = 5.dp),
         color = AppTheme.TextColors.category,
         style = AppTheme.TextStyle.Medium
     )

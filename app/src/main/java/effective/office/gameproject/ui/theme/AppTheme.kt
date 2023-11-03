@@ -21,12 +21,12 @@ object AppTheme {
          val category  = Color(0xFF41A0E7)
          val header3  = Color(0x66FFFFFF)
          val report = Color(0xFFA8ADB7)
-         val button = Color(0xFF050B18)
+         val buttonT = Color(0xFF050B18)
     }
     object ButtonColors{
          val button = Color(0xFFF4D144)
         val border = Color(0xFF1F2430)
-        val category = Color(0x3D44A9F4)
+        val categoryB = Color(0x3D44A9F4)
     }
 
     object TextStyle{
