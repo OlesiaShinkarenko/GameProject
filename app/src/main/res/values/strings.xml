@@ -11,4 +11,7 @@
     <string name="count_review">70M Reviews</string>
     <string name="count_download">70M</string>
     <string name="rate">4.9</string>
+    <string name="categories1">MOBA</string>
+    <string name="categories2">MULTIPLAYER</string>
+    <string name="categories3">STRATEGY</string>
 </resources>

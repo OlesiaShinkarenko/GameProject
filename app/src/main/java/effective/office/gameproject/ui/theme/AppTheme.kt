@@ -14,7 +14,7 @@ object AppTheme {
         val divider = Color(0xFF1A1F29)
     }
     object TextColors{
-    val count = Color(0xFF45454D)
+        val count = Color(0xFF45454D)
         val description = Color(0xB2EEF2FB)
          val header1= Color(0xFFEEF2FB)
          val header2  = Color(0xFFFFFFFF)
@@ -26,9 +26,23 @@ object AppTheme {
     object ButtonColors{
          val button = Color(0xFFF4D144)
         val border = Color(0xFF1F2430)
+        val category = Color(0x3D44A9F4)
     }
 
     object TextStyle{
+        val Medium
+        @Composable
+        get() =
+            TextStyle(
+                fontFamily = FontFamily,
+                fontWeight = FontWeight.Medium,
+                fontSize = 12.sp,
+                platformStyle = PlatformTextStyle(includeFontPadding = false),
+                lineHeightStyle = LineHeightStyle(
+                    LineHeightStyle.Alignment.Proportional,
+                    LineHeightStyle.Trim.None
+                )
+            )
         val Bold_48
         @Composable
         get()=
