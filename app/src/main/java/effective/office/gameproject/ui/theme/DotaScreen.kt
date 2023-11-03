@@ -5,7 +5,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -80,10 +82,12 @@ fun DotaScreen() {
         item {
             Rating(
                 text = stringResource(id = R.string.rate),
-                modifier = Modifier.fillMaxWidth().padding(
-                    start = 24.dp,
-                    end = 24.dp
-                )
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = 24.dp,
+                        end = 24.dp
+                    )
             )
         }
         val comments = listOf(
@@ -131,7 +135,7 @@ fun DotaScreen() {
                         start = 24.dp,
                         end = 24.dp,
                         top = 20.dp,
-                        bottom = 40.dp
+                        bottom = 60.dp
                     )
             )
         }
@@ -147,7 +151,26 @@ fun DotaScreenHeader(
         painter = painterResource(id = R.drawable.bg_header),
         modifier = modifier
     ){
+        Row {
             DotaLogo()
+            Column(modifier = Modifier.padding(start = 16.dp, top = 32.dp)) {
+                Text(
+                    text = stringResource(id = R.string.header),
+                    style = AppTheme.TextStyle.Bold_20_26,
+                    color = AppTheme.TextColors.header2
+                )
+                Row(modifier = Modifier.padding(top = 8.dp)) {
+                    Stars(width = 70.dp)
+                    Text(
+                        modifier = Modifier.padding(start = 8.dp),
+                        text = stringResource(id  = R.string.count_download),
+                        style = AppTheme.TextStyle.Regular_12,
+                        color = AppTheme.TextColors.count
+                        )
+                }
+            }
+        }
+
     }
 }
 
@@ -179,7 +202,6 @@ fun HeaderBackground(painter: Painter, modifier: Modifier = Modifier, content : 
                 painter = painter,
                 contentDescription = null
             )
-
         Box(
             modifier = Modifier
                 .align(Alignment.BottomStart)
@@ -188,7 +210,9 @@ fun HeaderBackground(painter: Painter, modifier: Modifier = Modifier, content : 
                 }
                 .padding(horizontal = 21.dp)
                 .padding(bottom = 40.dp),
-        ) { content() }
+        ) { 
+            content()
+        }
     }
 }
 
