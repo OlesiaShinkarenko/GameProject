@@ -1,4 +1,4 @@
-package effective.office.gameproject.ui.theme
+package effective.office.gameproject.presentation.dota
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -19,14 +19,17 @@ import androidx.compose.ui.unit.dp
 import effective.office.gameproject.R
 
 @Composable
-fun VideoPreviewRow(contentPadding: PaddingValues, modifier: Modifier = Modifier, previewResList: List<Int>) {
+fun VideoPreviewRow(
+    contentPadding: PaddingValues,
+    modifier: Modifier = Modifier,
+    previewResList: List<Int>
+) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = contentPadding,
         modifier = modifier,
-    ){
-        items(previewResList){
-            item->
+    ) {
+        items(previewResList) { item ->
             Video(
                 item = item,
                 modifier = Modifier.size(height = 120.dp, width = 240.dp)
@@ -37,7 +40,7 @@ fun VideoPreviewRow(contentPadding: PaddingValues, modifier: Modifier = Modifier
 
 @Composable
 fun Video(item: Int, modifier: Modifier) {
-    Card (modifier =  modifier.clip(RoundedCornerShape(6.dp))){
+    Card(modifier = modifier.clip(RoundedCornerShape(6.dp))) {
         Image(
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(id = item),
@@ -50,10 +53,12 @@ fun Video(item: Int, modifier: Modifier) {
 
 @Preview
 @Composable
-fun VideoPreviewRowPreview(){
-    VideoPreviewRow(contentPadding = PaddingValues(start = 24.dp,end = 24.dp),
-        previewResList  = listOf(
-        R.drawable.video_preview1,
-        R.drawable.video_preview2
-    ) )
+fun VideoPreviewRowPreview() {
+    VideoPreviewRow(
+        contentPadding = PaddingValues(start = 24.dp, end = 24.dp),
+        previewResList = listOf(
+            R.drawable.video_preview1,
+            R.drawable.video_preview2
+        )
+    )
 }

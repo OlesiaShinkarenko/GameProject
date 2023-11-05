@@ -22,57 +22,57 @@ import effective.office.gameproject.ui.theme.AppTheme.TextColors.report
 
 @Immutable
 data class CustomColors(
-    val primary:Color,
-    val divider : Color,
-    val count : Color,
-    val description : Color,
+    val primary: Color,
+    val divider: Color,
+    val count: Color,
+    val description: Color,
     val header1: Color,
-    val header2  : Color,
+    val header2: Color,
     val category: Color,
-    val header3  : Color,
-    val report : Color,
-    val buttonT : Color,
+    val header3: Color,
+    val report: Color,
+    val buttonT: Color,
     val button: Color,
-    val border : Color,
-    val categoryB : Color,
+    val border: Color,
+    val categoryB: Color,
 )
 
 val LocalCustomColors = staticCompositionLocalOf {
     CustomColors(
         primary = primary,
         divider = divider,
-     count= count,
-     description= description,
-     header1= header1,
-     header2  =header2,
-     category= category,
-     header3  =header3,
-     report = report,
-     buttonT= buttonT,
-     button= button,
-     border = border,
-     categoryB=categoryB,
+        count = count,
+        description = description,
+        header1 = header1,
+        header2 = header2,
+        category = category,
+        header3 = header3,
+        report = report,
+        buttonT = buttonT,
+        button = button,
+        border = border,
+        categoryB = categoryB,
     )
 }
 
 @Composable
 fun AppTheme(
-    content:@Composable ()->Unit
+    content: @Composable () -> Unit
 ) {
     val colors = CustomColors(
         primary = primary,
         divider = divider,
-        count= count,
-        description= description,
-        header1= header1,
-        header2  = header2,
-        category= category,
-        header3  = header3,
+        count = count,
+        description = description,
+        header1 = header1,
+        header2 = header2,
+        category = category,
+        header3 = header3,
         report = report,
-        buttonT= buttonT,
-        button= button,
+        buttonT = buttonT,
+        button = button,
         border = border,
-        categoryB= categoryB,
+        categoryB = categoryB,
     )
     CompositionLocalProvider(
         LocalCustomColors provides colors,

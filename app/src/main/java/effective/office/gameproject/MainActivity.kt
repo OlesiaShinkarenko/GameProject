@@ -9,13 +9,13 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import effective.office.gameproject.presentation.dota.DotaScreen
 import effective.office.gameproject.ui.theme.AppTheme
-import effective.office.gameproject.ui.theme.DotaScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window,false)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             MainScreen()
         }
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(){
+fun MainScreen() {
     AppTheme {
         ApplySystemBarColors()
 
@@ -35,9 +35,7 @@ fun MainScreen(){
     }
 
 
-
 }
-
 
 @Composable
 fun ApplySystemBarColors() {

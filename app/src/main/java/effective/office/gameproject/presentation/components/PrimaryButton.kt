@@ -1,4 +1,4 @@
-package effective.office.gameproject.ui.theme
+package effective.office.gameproject.presentation.components
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -9,9 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import effective.office.gameproject.ui.theme.AppTheme
 
 @Composable
-fun PrimaryButton(text: String, onClick: ()->Unit, modifier: Modifier = Modifier) {
+fun PrimaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Button(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.ButtonColors.button),
@@ -21,7 +22,7 @@ fun PrimaryButton(text: String, onClick: ()->Unit, modifier: Modifier = Modifier
             vertical = 12.dp
         )
     ) {
-        Text (
+        Text(
             text = text,
             style = AppTheme.TextStyle.Bold_20,
             modifier = Modifier.align(Alignment.CenterVertically),

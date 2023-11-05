@@ -1,4 +1,4 @@
-package effective.office.gameproject.ui.theme
+package effective.office.gameproject.presentation.dota
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -16,18 +16,23 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import effective.office.gameproject.R
+import effective.office.gameproject.ui.theme.AppTheme
 
 @Composable
-fun Rating(text:String, modifier: Modifier = Modifier) {
-    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically){
+fun RatingComponent(text: String, modifier: Modifier = Modifier) {
+    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
         Text(
             text = text,
             style = AppTheme.TextStyle.Bold_48,
-            color = AppTheme.TextColors.header2)
-        Column(modifier = Modifier.padding(start = 16.dp), verticalArrangement = Arrangement.Center) {
+            color = AppTheme.TextColors.header2
+        )
+        Column(
+            modifier = Modifier.padding(start = 16.dp),
+            verticalArrangement = Arrangement.Center
+        ) {
             Stars(width = 100.dp)
             Text(
-                text = stringResource(id =R.string.count_review),
+                text = stringResource(id = R.string.count_review),
                 modifier = Modifier.padding(top = 8.dp),
                 style = AppTheme.TextStyle.Regular_12,
                 color = AppTheme.TextColors.report
@@ -37,7 +42,7 @@ fun Rating(text:String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun Stars(width: Dp){
+fun Stars(width: Dp) {
     Image(
         modifier = Modifier.width(width = width),
         painter = painterResource(id = R.drawable.stars),

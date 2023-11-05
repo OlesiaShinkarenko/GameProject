@@ -1,51 +1,44 @@
-package effective.office.gameproject.ui.theme
+package effective.office.gameproject.presentation.dota
 
 import android.widget.Toast
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import effective.office.gameproject.R
+import effective.office.gameproject.presentation.components.PrimaryButton
+import effective.office.gameproject.presentation.model.CommentUI
+import effective.office.gameproject.ui.theme.AppTheme
 
 @Composable
 fun DotaScreen() {
-   val context = LocalContext.current
+    val context = LocalContext.current
     val lazyListState = rememberLazyListState()
 
     LazyColumn(
         state = lazyListState,
-        modifier = Modifier.fillMaxSize()){
+        modifier = Modifier.fillMaxSize()
+    ) {
         item {
-            DotaScreenHeader(modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 40.dp))
+            DotaScreenHeader(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 40.dp)
+            )
         }
-        item{
+        item {
             CategoriesRow(
                 resList = listOf(
                     R.string.categories1,
@@ -74,11 +67,12 @@ fun DotaScreen() {
                     R.drawable.video_preview1,
                     R.drawable.video_preview2
                 ),
-                contentPadding = PaddingValues(start =24.dp, end = 24.dp )
+                contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
             )
         }
-        item{
-            Text(text = stringResource(id = R.string.review),
+        item {
+            Text(
+                text = stringResource(id = R.string.review),
                 style = AppTheme.TextStyle.Bold_16,
                 color = AppTheme.TextColors.header2,
                 modifier = Modifier.padding(
@@ -87,10 +81,10 @@ fun DotaScreen() {
                     top = 20.dp,
                     bottom = 12.dp
                 )
-                )
+            )
         }
         item {
-            Rating(
+            RatingComponent(
                 text = stringResource(id = R.string.rate),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -102,30 +96,28 @@ fun DotaScreen() {
         }
         val comments = listOf(
             CommentUI(
-                author =  R.string.user1,
+                author = R.string.user1,
                 image = R.drawable.avatar1,
-                date= R.string.date,
+                date = R.string.date,
                 comment = R.string.comment
             ),
             CommentUI(
-                author =  R.string.user2,
+                author = R.string.user2,
                 image = R.drawable.avatar2,
-                date= R.string.date,
+                date = R.string.date,
                 comment = R.string.comment
             )
         )
-        itemsIndexed(comments){
-            index, item ->
+        itemsIndexed(comments) { index, item ->
             CommentBlock(
                 item,
-                modifier = Modifier.
-                padding(
+                modifier = Modifier.padding(
                     start = 24.dp,
                     end = 24.dp,
                     top = 16.dp
                 )
             )
-            if(index< comments.lastIndex){
+            if (index < comments.lastIndex) {
                 Divider(
                     color = AppTheme.BgColors.divider,
                     thickness = 1.dp,
@@ -133,10 +125,10 @@ fun DotaScreen() {
                 )
             }
         }
-        item{
+        item {
             PrimaryButton(
                 text = stringResource(id = R.string.install),
-                onClick ={
+                onClick = {
                     Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
                 },
                 modifier = Modifier
@@ -152,86 +144,12 @@ fun DotaScreen() {
     }
 }
 
-@Composable
-fun DotaScreenHeader(
-    modifier: Modifier = Modifier,
-) {
-    HeaderBackground(
-        painter = painterResource(id = R.drawable.bg_header),
-        modifier = modifier
-    ){
-        Row {
-            DotaLogo()
-            Column(modifier = Modifier.padding(start = 16.dp, top = 32.dp)) {
-                Text(
-                    text = stringResource(id = R.string.header),
-                    style = AppTheme.TextStyle.Bold_20_26,
-                    color = AppTheme.TextColors.header2
-                )
-                Row(modifier = Modifier.padding(top = 8.dp)) {
-                    Stars(width = 70.dp)
-                    Text(
-                        modifier = Modifier.padding(start = 8.dp),
-                        text = stringResource(id  = R.string.count_download),
-                        style = AppTheme.TextStyle.Regular_12,
-                        color = AppTheme.TextColors.count
-                        )
-                }
-            }
-        }
-
-    }
-}
-
-@Composable
-fun DotaLogo() {
-        Image(
-            modifier = Modifier
-                .background(
-                    color = AppTheme.TextColors.buttonT
-                )
-                .border(
-                    2.dp,
-                    color = AppTheme.ButtonColors.border,
-                    shape = RoundedCornerShape(12.dp)
-                )
-                .padding(
-                    all = 16.dp
-                )
-                .size(54.dp),
-            painter = painterResource(id = R.drawable.logo), contentDescription =null )
-}
-
-@Composable
-fun HeaderBackground(painter: Painter, modifier: Modifier = Modifier, content : @Composable () -> Unit) {
-    Box(modifier = modifier){
-            Image(
-                modifier = modifier,
-                contentScale = ContentScale.FillWidth,
-                painter = painter,
-                contentDescription = null
-            )
-        Box(
-            modifier = Modifier
-                .align(Alignment.BottomStart)
-                .graphicsLayer {
-                    translationY = 160f
-                }
-                .padding(horizontal = 21.dp)
-                .padding(bottom = 40.dp),
-        ) { 
-            content()
-        }
-    }
-}
-
-
 @Preview
 @Composable
-fun DotaScreenHeaderPreview(){
+fun DotaScreenHeaderPreview() {
     Surface(
         color = AppTheme.BgColors.primary
-    ){
+    ) {
         DotaScreenHeader()
     }
 }
