@@ -6,7 +6,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import effective.office.gameproject.ui.theme.Size
 
 @Composable
 fun CategoriesRow(
@@ -15,7 +15,7 @@ fun CategoriesRow(
     modifier: Modifier = Modifier
 ) {
     LazyRow(
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(Size.size_16),
         contentPadding = contentPadding,
         modifier = modifier,
     ) {

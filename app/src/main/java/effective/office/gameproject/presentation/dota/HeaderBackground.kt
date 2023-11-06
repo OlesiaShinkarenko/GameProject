@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.unit.dp
+import effective.office.gameproject.ui.theme.Padding
 
 @Composable
 fun HeaderBackground(
@@ -30,8 +30,8 @@ fun HeaderBackground(
                 .graphicsLayer {
                     translationY = 160f
                 }
-                .padding(horizontal = 21.dp)
-                .padding(bottom = 40.dp),
+                .padding(Padding.horizontal_24)
+                .padding(Padding.bottom_40),
         ) {
             content()
         }

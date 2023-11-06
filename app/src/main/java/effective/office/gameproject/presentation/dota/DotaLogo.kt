@@ -5,13 +5,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.AppTheme
+import effective.office.gameproject.ui.theme.Padding
+import effective.office.gameproject.ui.theme.Shape
+import effective.office.gameproject.ui.theme.Size
 
 @Composable
 fun DotaLogo() {
@@ -21,14 +22,14 @@ fun DotaLogo() {
                 color = AppTheme.TextColors.buttonT
             )
             .border(
-                2.dp,
+                Size.size_2,
                 color = AppTheme.ButtonColors.border,
-                shape = RoundedCornerShape(12.dp)
+                shape = Shape.ellipse_12
             )
             .padding(
-                all = 16.dp
+                Padding.all_16
             )
-            .size(54.dp),
+            .size(Size.size_54),
         painter = painterResource(id = R.drawable.logo),
         contentDescription = null
     )

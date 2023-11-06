@@ -8,9 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.AppTheme
+import effective.office.gameproject.ui.theme.Padding
+import effective.office.gameproject.ui.theme.Size
 
 @Composable
 fun DotaScreenHeader(
@@ -22,16 +23,16 @@ fun DotaScreenHeader(
     ) {
         Row {
             DotaLogo()
-            Column(modifier = Modifier.padding(start = 16.dp, top = 32.dp)) {
+            Column(modifier = Modifier.padding(Padding.start_16_top_32)) {
                 Text(
                     text = stringResource(id = R.string.header),
                     style = AppTheme.TextStyle.Bold_20_26,
                     color = AppTheme.TextColors.header2
                 )
-                Row(modifier = Modifier.padding(top = 8.dp)) {
-                    Stars(width = 70.dp)
+                Row(modifier = Modifier.padding(Padding.top_8)) {
+                    Stars(width = Size.size_70)
                     Text(
-                        modifier = Modifier.padding(start = 8.dp),
+                        modifier = Modifier.padding(Padding.start_8),
                         text = stringResource(id = R.string.count_download),
                         style = AppTheme.TextStyle.Regular_12,
                         color = AppTheme.TextColors.count

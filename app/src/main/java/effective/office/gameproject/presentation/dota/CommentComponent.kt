@@ -15,9 +15,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import effective.office.gameproject.presentation.model.CommentUI
 import effective.office.gameproject.ui.theme.AppTheme
+import effective.office.gameproject.ui.theme.Padding
+import effective.office.gameproject.ui.theme.Size
 
 @Composable
 fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
@@ -26,7 +27,7 @@ fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
             Box(
                 modifier = Modifier
                     .clip(CircleShape)
-                    .size(36.dp)
+                    .size(Size.size_36)
             ) {
                 Image(
                     painter = painterResource(item.image),
@@ -37,14 +38,14 @@ fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
             }
             Column(
                 modifier = Modifier.padding(
-                    start = 16.dp
+                   Padding.start_16
                 )
             ) {
                 Text(
                     text = stringResource(item.author),
                     style = AppTheme.TextStyle.Bold_16,
                     color = AppTheme.TextColors.header2,
-                    modifier = Modifier.padding(bottom = 6.dp)
+                    modifier = Modifier.padding(Padding.bottom_6)
                 )
                 Text(
                     text = stringResource(item.date),
@@ -53,7 +54,7 @@ fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
                 )
             }
         }
-        Row(modifier = Modifier.padding(top = 16.dp, bottom = 24.dp)) {
+        Row(modifier = Modifier.padding(Padding.top_16_bottom_24)) {
             Text(
                 text = stringResource(item.comment),
                 style = AppTheme.TextStyle.Regular_12_20,

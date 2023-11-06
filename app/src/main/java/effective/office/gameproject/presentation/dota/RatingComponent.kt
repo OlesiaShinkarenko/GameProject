@@ -14,9 +14,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.AppTheme
+import effective.office.gameproject.ui.theme.Padding
+import effective.office.gameproject.ui.theme.Size
 
 @Composable
 fun RatingComponent(text: String, modifier: Modifier = Modifier) {
@@ -27,13 +28,13 @@ fun RatingComponent(text: String, modifier: Modifier = Modifier) {
             color = AppTheme.TextColors.header2
         )
         Column(
-            modifier = Modifier.padding(start = 16.dp),
+            modifier = Modifier.padding(Padding.start_16),
             verticalArrangement = Arrangement.Center
         ) {
-            Stars(width = 100.dp)
+            Stars(width = Size.size_100)
             Text(
                 text = stringResource(id = R.string.count_review),
-                modifier = Modifier.padding(top = 8.dp),
+                modifier = Modifier.padding(Padding.top_8),
                 style = AppTheme.TextStyle.Regular_12,
                 color = AppTheme.TextColors.report
             )

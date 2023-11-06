@@ -2,13 +2,13 @@ package effective.office.gameproject.presentation.dota
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import effective.office.gameproject.ui.theme.AppTheme
+import effective.office.gameproject.ui.theme.Padding
+import effective.office.gameproject.ui.theme.Shape
 
 @Composable
 fun CategoryComponent(item: Int) {
@@ -17,9 +17,9 @@ fun CategoryComponent(item: Int) {
         modifier = Modifier
             .background(
                 color = AppTheme.ButtonColors.categoryB,
-                shape = RoundedCornerShape(12.dp)
+                shape = Shape.ellipse_12
             )
-            .padding(horizontal = 10.dp, vertical = 5.dp),
+            .padding(Padding.horizontal_10_vertical_5),
         color = AppTheme.TextColors.category,
         style = AppTheme.TextStyle.Medium
     )
