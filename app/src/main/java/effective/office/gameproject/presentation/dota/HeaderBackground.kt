@@ -19,8 +19,8 @@ fun HeaderBackground(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
-    val padding = PaddingValues(bottom = (Size.size_54 * 1f) + Size.size_16 )
-    Box(modifier = modifier.padding(padding)){
+    val padding = PaddingValues(bottom = (Size.size_54 * 1f) + Size.size_16)
+    Box(modifier = modifier.padding(padding)) {
         Image(
             modifier = modifier,
             contentScale = ContentScale.FillWidth,

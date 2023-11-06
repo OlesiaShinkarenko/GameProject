@@ -3,6 +3,7 @@ package effective.office.gameproject.presentation.dota
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,7 +35,7 @@ fun DotaScreenHeader(
                     color = AppTheme.colors.header2
                 )
                 Row(modifier = Modifier.padding(Padding.top_8)) {
-                    Stars(width = Size.size_70)
+                    Stars(rating = 4.9,  modifier = Modifier.size(Size.size_16))
                     Text(
                         modifier = Modifier.padding(Padding.start_8),
                         text = stringResource(id = R.string.count_download),

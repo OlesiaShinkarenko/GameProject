@@ -38,7 +38,7 @@ fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
             }
             Column(
                 modifier = Modifier.padding(
-                   Padding.start_16
+                    Padding.start_16
                 )
             ) {
                 Text(

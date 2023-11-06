@@ -8,8 +8,6 @@ object Size {
     val size_2 = 2.dp
     val size_54 = 54.dp
     val size_1 = 1.dp
-    val size_70 = 70.dp
-    val size_100 = 100.dp
     val size_120 = 120.dp
     val size_240 = 240.dp
 }

@@ -1,18 +1,17 @@
 package effective.office.gameproject.presentation.dota
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.res.vectorResource
 import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.AppTheme
 import effective.office.gameproject.ui.theme.Padding
@@ -27,9 +26,11 @@ fun RatingComponent(text: String, modifier: Modifier = Modifier) {
             color = AppTheme.colors.header1
         )
         Column(
-            modifier = Modifier.padding(Padding.start_16).align(Alignment.CenterVertically),
+            modifier = Modifier
+                .padding(Padding.start_16)
+                .align(Alignment.CenterVertically),
         ) {
-            Stars(width = Size.size_100)
+            Stars(rating = 4.9, modifier = Modifier.size(Size.size_16))
             Text(
                 text = stringResource(id = R.string.count_review),
                 modifier = Modifier.padding(Padding.top_8),
@@ -41,11 +42,25 @@ fun RatingComponent(text: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun Stars(width: Dp) {
-    Image(
-        modifier = Modifier.width(width = width),
-        painter = painterResource(id = R.drawable.stars),
-        contentDescription = null,
-        contentScale = ContentScale.FillWidth
-    )
+fun Stars(modifier: Modifier = Modifier, rating: Double = 0.0, stars: Int = 5) {
+    var isHalfStar = (rating % 1) != 0.0
+    Row {
+        for (index in 1..stars) {
+            Icon(
+                imageVector = if (index <= rating) {
+                    ImageVector.vectorResource(id = R.drawable.star)
+                } else {
+                    if (isHalfStar) {
+                        isHalfStar = false
+                        ImageVector.vectorResource(id = R.drawable.star_half)
+                    } else {
+                        ImageVector.vectorResource(id = R.drawable.star_empty)
+                    }
+                },
+                contentDescription = null,
+                tint = AppTheme.colors.button,
+                modifier = modifier
+            )
+        }
+    }
 }
