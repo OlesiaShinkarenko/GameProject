@@ -14,16 +14,16 @@ import effective.office.gameproject.ui.theme.Shape
 fun PrimaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Button(
         onClick = onClick,
-        colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.ButtonColors.button),
+        colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.colors.button),
         shape = Shape.ellipse_6,
         modifier = modifier,
         contentPadding = Padding.vertical_12
     ) {
         Text(
             text = text,
-            style = AppTheme.TextStyle.Bold_20,
+            style = AppTheme.typography.Bold_20,
             modifier = Modifier.align(Alignment.CenterVertically),
-            color = AppTheme.TextColors.buttonT
+            color = AppTheme.colors.buttonT
         )
     }
 }

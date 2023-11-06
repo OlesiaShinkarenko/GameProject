@@ -20,7 +20,7 @@ fun CategoryComponent(item: Int) {
                 shape = Shape.ellipse_12
             )
             .padding(Padding.horizontal_10_vertical_5),
-        color = AppTheme.TextColors.category,
-        style = AppTheme.TextStyle.Medium
+        color = AppTheme.colors.category,
+        style = AppTheme.typography.Medium
     )
 }

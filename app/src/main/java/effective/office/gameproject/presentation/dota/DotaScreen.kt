@@ -66,8 +66,8 @@ fun DotaScreen() {
         item {
             Text(
                 text = stringResource(id = R.string.description),
-                style = AppTheme.TextStyle.Regular_12_19,
-                color = AppTheme.TextColors.description,
+                style = AppTheme.typography.Regular_12_19,
+                color = AppTheme.colors.description,
                 modifier = Modifier.padding(Padding.all_24_24_14_14)
             )
         }
@@ -83,8 +83,8 @@ fun DotaScreen() {
         item {
             Text(
                 text = stringResource(id = R.string.review),
-                style = AppTheme.TextStyle.Bold_16,
-                color = AppTheme.TextColors.header2,
+                style = AppTheme.typography.Bold_16,
+                color = AppTheme.colors.header2,
                 modifier = Modifier.padding(
                     Padding.all_24_24_20_12
                 )
@@ -109,7 +109,7 @@ fun DotaScreen() {
             )
             if (index < comments.lastIndex) {
                 Divider(
-                    color = AppTheme.BgColors.divider,
+                    color = AppTheme.colors.divider,
                     thickness = Size.size_1,
                     modifier = Modifier.padding(Padding.top_12_bottom_10)
                 )
@@ -135,7 +135,7 @@ fun DotaScreen() {
 @Composable
 fun DotaScreenHeaderPreview() {
     Surface(
-        color = AppTheme.BgColors.primary
+        color = AppTheme.colors.primary
     ) {
         DotaScreenHeader()
     }

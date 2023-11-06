@@ -43,22 +43,22 @@ fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
             ) {
                 Text(
                     text = stringResource(item.author),
-                    style = AppTheme.TextStyle.Bold_16,
-                    color = AppTheme.TextColors.header2,
+                    style = AppTheme.typography.Bold_16,
+                    color = AppTheme.colors.header2,
                     modifier = Modifier.padding(Padding.bottom_6)
                 )
                 Text(
                     text = stringResource(item.date),
-                    style = AppTheme.TextStyle.Bold_12,
-                    color = AppTheme.TextColors.report
+                    style = AppTheme.typography.Bold_12,
+                    color = AppTheme.colors.report
                 )
             }
         }
         Row(modifier = Modifier.padding(Padding.top_16_bottom_24)) {
             Text(
                 text = stringResource(item.comment),
-                style = AppTheme.TextStyle.Regular_12_20,
-                color = AppTheme.TextColors.report
+                style = AppTheme.typography.Regular_12_20,
+                color = AppTheme.colors.report
             )
         }
     }

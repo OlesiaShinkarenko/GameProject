@@ -28,7 +28,7 @@ fun MainScreen() {
         ApplySystemBarColors()
 
         Surface(
-            color = AppTheme.BgColors.primary
+            color = AppTheme.colors.primary
         ) {
             DotaScreen()
         }

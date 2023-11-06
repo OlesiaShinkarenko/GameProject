@@ -26,16 +26,16 @@ fun DotaScreenHeader(
             Column(modifier = Modifier.padding(Padding.start_16_top_32)) {
                 Text(
                     text = stringResource(id = R.string.header),
-                    style = AppTheme.TextStyle.Bold_20_26,
-                    color = AppTheme.TextColors.header2
+                    style = AppTheme.typography.Bold_20_26,
+                    color = AppTheme.colors.header2
                 )
                 Row(modifier = Modifier.padding(Padding.top_8)) {
                     Stars(width = Size.size_70)
                     Text(
                         modifier = Modifier.padding(Padding.start_8),
                         text = stringResource(id = R.string.count_download),
-                        style = AppTheme.TextStyle.Regular_12,
-                        color = AppTheme.TextColors.count
+                        style = AppTheme.typography.Regular_12,
+                        color = AppTheme.colors.count
                     )
                 }
             }

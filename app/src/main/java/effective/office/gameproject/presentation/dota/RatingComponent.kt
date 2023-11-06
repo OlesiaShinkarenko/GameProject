@@ -24,8 +24,8 @@ fun RatingComponent(text: String, modifier: Modifier = Modifier) {
     Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
         Text(
             text = text,
-            style = AppTheme.TextStyle.Bold_48,
-            color = AppTheme.TextColors.header2
+            style = AppTheme.typography.Bold_48,
+            color = AppTheme.colors.header1
         )
         Column(
             modifier = Modifier.padding(Padding.start_16),
@@ -35,8 +35,8 @@ fun RatingComponent(text: String, modifier: Modifier = Modifier) {
             Text(
                 text = stringResource(id = R.string.count_review),
                 modifier = Modifier.padding(Padding.top_8),
-                style = AppTheme.TextStyle.Regular_12,
-                color = AppTheme.TextColors.report
+                style = AppTheme.typography.Regular_12,
+                color = AppTheme.colors.report
             )
         }
     }
