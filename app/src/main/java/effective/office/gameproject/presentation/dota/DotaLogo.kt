@@ -16,9 +16,9 @@ import effective.office.gameproject.ui.theme.Shape
 import effective.office.gameproject.ui.theme.Size
 
 @Composable
-fun DotaLogo() {
+fun DotaLogo(modifier: Modifier = Modifier) {
     Image(
-        modifier = Modifier
+        modifier = modifier
             .clip(
                 shape = Shape.ellipse_12
             )

@@ -50,7 +50,6 @@ fun DotaScreen() {
             DotaScreenHeader(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(Padding.bottom_40)
             )
         }
         item {
@@ -60,7 +59,7 @@ fun DotaScreen() {
                     R.string.categories2,
                     R.string.categories3
                 ),
-                contentPadding = Padding.horizontal_24
+                modifier = Modifier.padding(Padding.horizontal_24)
             )
         }
         item {
@@ -68,7 +67,7 @@ fun DotaScreen() {
                 text = stringResource(id = R.string.description),
                 style = AppTheme.typography.Regular_12_19,
                 color = AppTheme.colors.description,
-                modifier = Modifier.padding(Padding.all_24_24_14_14)
+                modifier = Modifier.padding(Padding.all_24_24_30_18)
             )
         }
         item {
@@ -86,7 +85,7 @@ fun DotaScreen() {
                 style = AppTheme.typography.Bold_16,
                 color = AppTheme.colors.header2,
                 modifier = Modifier.padding(
-                    Padding.all_24_24_20_12
+                    Padding.start_24_top_24
                 )
             )
         }
@@ -111,7 +110,7 @@ fun DotaScreen() {
                 Divider(
                     color = AppTheme.colors.divider,
                     thickness = Size.size_1,
-                    modifier = Modifier.padding(Padding.top_12_bottom_10)
+                    modifier = Modifier.padding(Padding.horizontal_38)
                 )
             }
         }
@@ -124,7 +123,7 @@ fun DotaScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
-                        Padding.all_24_24_20_60
+                        Padding.all_24_24_16_38
                     )
             )
         }

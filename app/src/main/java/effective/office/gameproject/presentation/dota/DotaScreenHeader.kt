@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -21,9 +22,12 @@ fun DotaScreenHeader(
         painter = painterResource(id = R.drawable.bg_header),
         modifier = modifier
     ) {
-        Row {
+        Row(verticalAlignment = Alignment.Bottom) {
             DotaLogo()
-            Column(modifier = Modifier.padding(Padding.start_16_top_32)) {
+            Column(
+                modifier = Modifier
+                    .padding(Padding.start_16),
+            ) {
                 Text(
                     text = stringResource(id = R.string.header),
                     style = AppTheme.typography.Bold_20_26,

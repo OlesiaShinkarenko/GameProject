@@ -1,7 +1,6 @@
 package effective.office.gameproject.presentation.dota
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -21,15 +20,14 @@ import effective.office.gameproject.ui.theme.Size
 
 @Composable
 fun RatingComponent(text: String, modifier: Modifier = Modifier) {
-    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
+    Row(modifier = modifier) {
         Text(
             text = text,
             style = AppTheme.typography.Bold_48,
             color = AppTheme.colors.header1
         )
         Column(
-            modifier = Modifier.padding(Padding.start_16),
-            verticalArrangement = Arrangement.Center
+            modifier = Modifier.padding(Padding.start_16).align(Alignment.CenterVertically),
         ) {
             Stars(width = Size.size_100)
             Text(

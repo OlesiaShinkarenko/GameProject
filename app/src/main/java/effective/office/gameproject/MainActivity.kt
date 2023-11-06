@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
 fun MainScreen() {
     AppTheme {
         ApplySystemBarColors()
-
         Surface(
             color = AppTheme.colors.primary
         ) {
@@ -43,6 +42,6 @@ fun ApplySystemBarColors() {
 
     SideEffect {
         systemUiController.setSystemBarsColor(color = Color.Transparent)
-        systemUiController.setNavigationBarColor(color = Color.Transparent)
+        systemUiController.isNavigationBarVisible = false
     }
 }
