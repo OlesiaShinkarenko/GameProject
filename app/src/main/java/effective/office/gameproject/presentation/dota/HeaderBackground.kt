@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
+import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.Padding
 import effective.office.gameproject.ui.theme.Size
 
@@ -25,7 +27,7 @@ fun HeaderBackground(
             modifier = modifier,
             contentScale = ContentScale.FillWidth,
             painter = painter,
-            contentDescription = null
+            contentDescription = stringResource(id = R.string.preview)
         )
         Box(
             modifier = Modifier

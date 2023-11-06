@@ -15,6 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import effective.office.gameproject.R
 import effective.office.gameproject.presentation.model.CommentUI
 import effective.office.gameproject.ui.theme.AppTheme
 import effective.office.gameproject.ui.theme.Padding
@@ -31,7 +32,7 @@ fun CommentBlock(item: CommentUI, modifier: Modifier = Modifier) {
             ) {
                 Image(
                     painter = painterResource(item.image),
-                    contentDescription = null,
+                    contentDescription = stringResource(id = R.string.icon_user),
                     contentScale = ContentScale.FillWidth,
                     modifier = Modifier.fillMaxWidth()
                 )

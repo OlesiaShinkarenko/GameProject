@@ -14,4 +14,10 @@
     <string name="categories1">MOBA</string>
     <string name="categories2">MULTIPLAYER</string>
     <string name="categories3">STRATEGY</string>
+    <string name="icon_user">Иконка пользователя</string>
+    <string name="logo">Логотип игры</string>
+    <string name="click">Clicked</string>
+    <string name="preview">Превью игры</string>
+    <string name="preview_video">Видеообзор игры</string>
+    <string name="star_rate">Звезда рейтинга</string>
 </resources>

@@ -118,7 +118,7 @@ fun DotaScreen() {
             PrimaryButton(
                 text = stringResource(id = R.string.install),
                 onClick = {
-                    Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.click, Toast.LENGTH_SHORT).show()
                 },
                 modifier = Modifier
                     .fillMaxWidth()

@@ -57,7 +57,7 @@ fun Stars(modifier: Modifier = Modifier, rating: Double = 0.0, stars: Int = 5) {
                         ImageVector.vectorResource(id = R.drawable.star_empty)
                     }
                 },
-                contentDescription = null,
+                contentDescription = stringResource(R.string.star_rate),
                 tint = AppTheme.colors.button,
                 modifier = modifier
             )

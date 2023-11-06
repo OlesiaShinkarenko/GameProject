@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.AppTheme
 import effective.office.gameproject.ui.theme.Padding
@@ -35,6 +36,6 @@ fun DotaLogo(modifier: Modifier = Modifier) {
             )
             .size(Size.size_54),
         painter = painterResource(id = R.drawable.logo),
-        contentDescription = null
+        contentDescription = stringResource(id = R.string.logo)
     )
 }

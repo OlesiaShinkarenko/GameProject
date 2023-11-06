@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import effective.office.gameproject.R
 import effective.office.gameproject.ui.theme.Padding
@@ -45,7 +46,7 @@ fun Video(item: Int, modifier: Modifier) {
         Image(
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(id = item),
-            contentDescription = null,
+            contentDescription = stringResource(id = R.string.preview_video),
             contentScale = ContentScale.FillWidth
         )
     }
