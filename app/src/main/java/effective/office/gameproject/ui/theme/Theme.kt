@@ -1,70 +1,122 @@
 package effective.office.gameproject.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
-import androidx.core.view.WindowCompat
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
+import effective.office.gameproject.ui.theme.AppTheme.BackgroundColors.divider
+import effective.office.gameproject.ui.theme.AppTheme.BackgroundColors.primary
+import effective.office.gameproject.ui.theme.AppTheme.BackgroundColors.primary_light
+import effective.office.gameproject.ui.theme.AppTheme.ButtonColors.border
+import effective.office.gameproject.ui.theme.AppTheme.ButtonColors.button
+import effective.office.gameproject.ui.theme.AppTheme.ButtonColors.categoryB
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.buttonT
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.category
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.count
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.count_light
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.description
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.description_light
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.header1
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.header1_light
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.header2
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.header2_light
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.header3
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.header3_light
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.report
+import effective.office.gameproject.ui.theme.AppTheme.TextColors.report_light
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+
+val LocalCustomColors = staticCompositionLocalOf {
+    CustomColors(
+        primary = primary,
+        divider = divider,
+        count = count,
+        description = description,
+        header1 = header1,
+        header2 = header2,
+        category = category,
+        header3 = header3,
+        report = report,
+        buttonT = buttonT,
+        button = button,
+        border = border,
+        categoryB = categoryB,
+    )
+}
+
+
+val LocalCustomTypography = staticCompositionLocalOf {
+    CustomTypography(
+        Medium = AppTheme.TextStyle.Medium,
+        Bold_48 = AppTheme.TextStyle.Bold_48,
+        Bold_20_26 = AppTheme.TextStyle.Bold_20_26,
+        Bold_20 = AppTheme.TextStyle.Bold_20,
+        Bold_16 = AppTheme.TextStyle.Bold_16,
+        Bold_12 = AppTheme.TextStyle.Bold_12,
+        Regular_16 = AppTheme.TextStyle.Regular_16,
+        Regular_12 = AppTheme.TextStyle.Regular_12,
+        Regular_12_19 = AppTheme.TextStyle.Regular_12_19,
+        Regular_12_20 = AppTheme.TextStyle.Regular_12_20,
+    )
+}
+
+val lightColors = CustomColors(
+    primary = primary_light,
+    divider = divider,
+    count = count_light,
+    description = description_light,
+    header1 = header1_light,
+    header2 = header2_light,
+    category = category,
+    header3 = header3_light,
+    report = report_light,
+    buttonT = buttonT,
+    button = button,
+    border = border,
+    categoryB = categoryB,
 )
-
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+val darkColors = CustomColors(
+    primary = primary,
+    divider = divider,
+    count = count,
+    description = description,
+    header1 = header1,
+    header2 = header2,
+    category = category,
+    header3 = header3,
+    report = report,
+    buttonT = buttonT,
+    button = button,
+    border = border,
+    categoryB = categoryB,
 )
 
 @Composable
-fun GameProjectTheme(
+fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+    val colors = when {
+        darkTheme -> darkColors
+        else -> lightColors
     }
-    val view = LocalView.current
-    if (!view.isInEditMode) {
-        SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
-        }
-    }
+    val typography = CustomTypography(
+        Medium = AppTheme.TextStyle.Medium,
+        Bold_48 = AppTheme.TextStyle.Bold_48,
+        Bold_20_26 = AppTheme.TextStyle.Bold_20_26,
+        Bold_20 = AppTheme.TextStyle.Bold_20,
+        Bold_16 = AppTheme.TextStyle.Bold_16,
+        Bold_12 = AppTheme.TextStyle.Bold_12,
+        Regular_16 = AppTheme.TextStyle.Regular_16,
+        Regular_12 = AppTheme.TextStyle.Regular_12,
+        Regular_12_19 = AppTheme.TextStyle.Regular_12_19,
+        Regular_12_20 = AppTheme.TextStyle.Regular_12_20,
+    )
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+    CompositionLocalProvider(
+        LocalCustomColors provides colors,
+        LocalCustomTypography provides typography,
         content = content
     )
+
 }

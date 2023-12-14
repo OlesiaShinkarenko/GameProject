@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">GameProject</string>
+    <string name="header">DoTA 2</string>
+    <string name="description">Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the "Ancient", whilst defending their own.</string>
+    <string name="install">Install</string>
+    <string name="review">Review &amp; Ratings</string>
+    <string name="user1">Auguste Conte</string>
+    <string name="user2">Jang Marcelino</string>
+    <string name="date">February 14, 2019</string>
+    <string name="comment">“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”</string>
+    <string name="count_review">70M Reviews</string>
+    <string name="count_download">70M</string>
+    <string name="rate">4.9</string>
+    <string name="categories1">MOBA</string>
+    <string name="categories2">MULTIPLAYER</string>
+    <string name="categories3">STRATEGY</string>
+    <string name="icon_user">Иконка пользователя</string>
+    <string name="logo">Логотип игры</string>
+    <string name="click">Clicked</string>
+    <string name="preview">Превью игры</string>
+    <string name="preview_video">Видеообзор игры</string>
+    <string name="star_rate">Звезда рейтинга</string>
 </resources>
